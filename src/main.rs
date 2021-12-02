@@ -7,10 +7,12 @@ use anyhow::anyhow;
 use structopt::StructOpt;
 
 mod d01;
+mod d02;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 enum Day {
     D01,
+    D02,
 }
 
 #[derive(Debug, thiserror::Error)]
@@ -32,6 +34,7 @@ impl FromStr for Day {
 
         let day = match day {
             1 => Day::D01,
+            2 => Day::D02,
             _ => return Err(DayParseError::InvalidDay(day)),
         };
 
@@ -75,9 +78,13 @@ impl FromStr for Puzzle {
 }
 
 fn select(input: Input, text: String) -> anyhow::Result<()> {
+    #[allow(unreachable_patterns)]
     match (input.day, input.puzzle) {
         (Day::D01, Puzzle::First) => d01::entry(text, false),
         (Day::D01, Puzzle::Second) => d01::entry(text, true),
+        (Day::D02, Puzzle::First) => d02::entry1(text),
+        (Day::D02, Puzzle::Second) => d02::entry2(text),
+        _ => Err(anyhow!("Not implemented!")),
     }
 }
 
