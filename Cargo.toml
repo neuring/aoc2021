@@ -9,3 +9,6 @@ edition = "2021"
 anyhow = "1.0.51"
 structopt = "0.3.25"
 thiserror = "1.0.30"
+
+[dev-dependencies]
+paste = "1.0.6"

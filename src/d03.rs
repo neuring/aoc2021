@@ -29,7 +29,7 @@ pub fn get_value_width(text: &str) -> anyhow::Result<usize> {
     Ok(width)
 }
 
-pub fn entry1(text: &str) -> Result<(), anyhow::Error> {
+pub fn entry1(text: &str) -> anyhow::Result<u32> {
     let value_width = get_value_width(text)?;
 
     let mut num_total_values = 0;
@@ -58,9 +58,7 @@ pub fn entry1(text: &str) -> Result<(), anyhow::Error> {
     let gamma_rate = result;
     let epsilon_rate = !result & !(u32::MAX << value_width);
 
-    println!("{}", gamma_rate * epsilon_rate);
-
-    Ok(())
+    Ok(gamma_rate * epsilon_rate)
 }
 
 fn filter_value_with_bit(data: &mut Vec<u32>, bit: usize, bit_is_one: bool) {
@@ -141,7 +139,7 @@ fn find_scrubber_rating(
     Ok(data[0])
 }
 
-pub fn entry2(text: &str) -> anyhow::Result<()> {
+pub fn entry2(text: &str) -> anyhow::Result<u32> {
     let value_width = get_value_width(text)?;
 
     let data = text
@@ -153,6 +151,5 @@ pub fn entry2(text: &str) -> anyhow::Result<()> {
     let oxygen_rating = find_oxygen_rating(data.clone(), value_width)?;
     let scrubber_rating = find_scrubber_rating(data, value_width)?;
 
-    println!("{}", oxygen_rating * scrubber_rating);
-    Ok(())
+    Ok(oxygen_rating * scrubber_rating)
 }

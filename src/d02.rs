@@ -44,7 +44,7 @@ fn parse(text: &str) -> anyhow::Result<Vec<Instruction>> {
         .collect()
 }
 
-pub fn entry1(text: &str) -> anyhow::Result<()> {
+pub fn entry1(text: &str) -> anyhow::Result<i32> {
     let instructions = parse(&text)?;
 
     let (x, y) = instructions
@@ -56,11 +56,10 @@ pub fn entry1(text: &str) -> anyhow::Result<()> {
         })
         .fold((0, 0), |(x, y), (nx, ny)| (x + nx, y + ny));
 
-    println!("x = {}, y = {}, result = {}", x, y, x * y);
-    Ok(())
+    Ok(x * y)
 }
 
-pub fn entry2(text: &str) -> anyhow::Result<()> {
+pub fn entry2(text: &str) -> anyhow::Result<u32> {
     let instructions = parse(&text)?;
 
     let mut x = 0;
@@ -78,6 +77,5 @@ pub fn entry2(text: &str) -> anyhow::Result<()> {
         }
     }
 
-    println!("x = {}, y = {}, result = {}", x, y, x * y);
-    Ok(())
+    Ok(x * y)
 }

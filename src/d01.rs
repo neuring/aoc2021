@@ -10,7 +10,7 @@ fn parse(input: &str) -> anyhow::Result<Vec<i64>> {
         .collect::<Result<Vec<_>, _>>()
 }
 
-pub fn entry(input: &str, second_puzzle: bool) -> anyhow::Result<()> {
+fn entry(input: &str, second_puzzle: bool) -> anyhow::Result<usize> {
     let mut data = parse(&input)?;
 
     if second_puzzle {
@@ -19,11 +19,13 @@ pub fn entry(input: &str, second_puzzle: bool) -> anyhow::Result<()> {
 
     let result = data.array_windows().filter(|&[a, b]| a < b).count();
 
-    if !second_puzzle {
-        println!("Increasing {} times", result);
-    } else {
-        println!("Sliding sum is increasing {} times", result);
-    }
+    Ok(result)
+}
 
-    Ok(())
+pub fn entry1(text: &str) -> anyhow::Result<usize> {
+    entry(text, false)
+}
+
+pub fn entry2(text: &str) -> anyhow::Result<usize> {
+    entry(text, true)
 }
