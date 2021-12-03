@@ -10,7 +10,7 @@ fn parse(input: &str) -> anyhow::Result<Vec<i64>> {
         .collect::<Result<Vec<_>, _>>()
 }
 
-pub fn entry(input: String, second_puzzle: bool) -> anyhow::Result<()> {
+pub fn entry(input: &str, second_puzzle: bool) -> anyhow::Result<()> {
     let mut data = parse(&input)?;
 
     if second_puzzle {
