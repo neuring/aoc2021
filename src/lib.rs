@@ -2,6 +2,7 @@
 #![feature(array_windows)]
 #![feature(drain_filter)]
 #![feature(let_else)]
+#![feature(bool_to_option)]
 
 use std::{fmt, path::PathBuf, str::FromStr};
 
@@ -11,6 +12,7 @@ mod d01;
 mod d02;
 mod d03;
 mod d04;
+mod d05;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum Day {
@@ -18,6 +20,7 @@ pub enum Day {
     D02,
     D03,
     D04,
+    D05,
 }
 
 #[derive(Debug, thiserror::Error)]
@@ -42,6 +45,7 @@ impl FromStr for Day {
             2 => Day::D02,
             3 => Day::D03,
             4 => Day::D04,
+            5 => Day::D05,
             _ => return Err(DayParseError::InvalidDay(day)),
         };
 
@@ -95,6 +99,8 @@ fn select(input: &Input, text: &str) -> anyhow::Result<String> {
         (Day::D03, Puzzle::Second) => d03::entry2(text)?.to_string(),
         (Day::D04, Puzzle::First) => d04::entry1(text)?.to_string(),
         (Day::D04, Puzzle::Second) => d04::entry2(text)?.to_string(),
+        (Day::D05, Puzzle::First) => d05::entry1(text)?.to_string(),
+        (Day::D05, Puzzle::Second) => d05::entry2(text)?.to_string(),
         _ => bail!("Not implemented!"),
     };
 

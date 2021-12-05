@@ -41,3 +41,8 @@ gen_test! {small, D04, First, 4512}
 gen_test! {main, D04, First, 60368}
 gen_test! {small, D04, Second, 1924}
 gen_test! {main, D04, Second, 17435}
+
+gen_test! {small, D05, First, 5}
+gen_test! {main, D05, First, 5585}
+gen_test! {small, D05, Second, 12}
+gen_test! {main, D05, Second, 17193}
