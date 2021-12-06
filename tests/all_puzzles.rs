@@ -46,3 +46,8 @@ gen_test! {small, D05, First, 5}
 gen_test! {main, D05, First, 5585}
 gen_test! {small, D05, Second, 12}
 gen_test! {main, D05, Second, 17193}
+
+gen_test! {small, D06, First, 5934}
+gen_test! {main, D06, First, 345387}
+gen_test! {small, D06, Second, 26984457539usize}
+gen_test! {main, D06, Second, 1574445493136usize}

@@ -13,6 +13,7 @@ mod d02;
 mod d03;
 mod d04;
 mod d05;
+mod d06;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub enum Day {
@@ -21,6 +22,7 @@ pub enum Day {
     D03,
     D04,
     D05,
+    D06,
 }
 
 #[derive(Debug, thiserror::Error)]
@@ -46,6 +48,7 @@ impl FromStr for Day {
             3 => Day::D03,
             4 => Day::D04,
             5 => Day::D05,
+            6 => Day::D06,
             _ => return Err(DayParseError::InvalidDay(day)),
         };
 
@@ -101,6 +104,8 @@ fn select(input: &Input, text: &str) -> anyhow::Result<String> {
         (Day::D04, Puzzle::Second) => d04::entry2(text)?.to_string(),
         (Day::D05, Puzzle::First) => d05::entry1(text)?.to_string(),
         (Day::D05, Puzzle::Second) => d05::entry2(text)?.to_string(),
+        (Day::D06, Puzzle::First) => d06::entry1(text)?.to_string(),
+        (Day::D06, Puzzle::Second) => d06::entry2(text)?.to_string(),
         _ => bail!("Not implemented!"),
     };
 
