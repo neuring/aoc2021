@@ -51,3 +51,8 @@ gen_test! {small, 06, First, 5934}
 gen_test! {main, 06, First, 345387}
 gen_test! {small, 06, Second, 26984457539usize}
 gen_test! {main, 06, Second, 1574445493136usize}
+
+gen_test! {small, 07, First, 37}
+gen_test! {main, 07, First, 355989}
+gen_test! {small, 07, Second, 168}
+gen_test! {main, 07, Second, 102245489}
