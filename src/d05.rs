@@ -155,10 +155,10 @@ fn solve(text: &str, line_filter: impl Fn(&Line) -> bool) -> anyhow::Result<usiz
     Ok(result)
 }
 
-pub fn entry1(text: &str) -> anyhow::Result<usize> {
+pub fn part1(text: &str) -> anyhow::Result<usize> {
     solve(text, |line| line.is_horizontal() || line.is_vertical())
 }
 
-pub fn entry2(text: &str) -> anyhow::Result<usize> {
+pub fn part2(text: &str) -> anyhow::Result<usize> {
     solve(text, |_| true)
 }

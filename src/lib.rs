@@ -14,15 +14,19 @@ mod d03;
 mod d04;
 mod d05;
 mod d06;
+mod d07;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
-pub enum Day {
-    D01,
-    D02,
-    D03,
-    D04,
-    D05,
-    D06,
+pub struct Day(u32);
+
+impl Day {
+    pub fn new(day: u32) -> Self {
+        if day > 25 {
+            panic!("Invalid day")
+        } else {
+            Day(day)
+        }
+    }
 }
 
 #[derive(Debug, thiserror::Error)]
@@ -42,17 +46,11 @@ impl FromStr for Day {
             .parse()
             .map_err(|_| DayParseError::NotANumber(s.to_string()))?;
 
-        let day = match day {
-            1 => Day::D01,
-            2 => Day::D02,
-            3 => Day::D03,
-            4 => Day::D04,
-            5 => Day::D05,
-            6 => Day::D06,
-            _ => return Err(DayParseError::InvalidDay(day)),
-        };
+        if day > 25 {
+            return Err(DayParseError::InvalidDay(day));
+        }
 
-        Ok(day)
+        Ok(Day(day))
     }
 }
 
@@ -94,18 +92,20 @@ impl FromStr for Puzzle {
 fn select(input: &Input, text: &str) -> anyhow::Result<String> {
     #[allow(unreachable_patterns)]
     let result = match (input.day, input.puzzle) {
-        (Day::D01, Puzzle::First) => d01::entry1(text)?.to_string(),
-        (Day::D01, Puzzle::Second) => d01::entry2(text)?.to_string(),
-        (Day::D02, Puzzle::First) => d02::entry1(text)?.to_string(),
-        (Day::D02, Puzzle::Second) => d02::entry2(text)?.to_string(),
-        (Day::D03, Puzzle::First) => d03::entry1(text)?.to_string(),
-        (Day::D03, Puzzle::Second) => d03::entry2(text)?.to_string(),
-        (Day::D04, Puzzle::First) => d04::entry1(text)?.to_string(),
-        (Day::D04, Puzzle::Second) => d04::entry2(text)?.to_string(),
-        (Day::D05, Puzzle::First) => d05::entry1(text)?.to_string(),
-        (Day::D05, Puzzle::Second) => d05::entry2(text)?.to_string(),
-        (Day::D06, Puzzle::First) => d06::entry1(text)?.to_string(),
-        (Day::D06, Puzzle::Second) => d06::entry2(text)?.to_string(),
+        (Day(01), Puzzle::First) => d01::part1(text)?.to_string(),
+        (Day(01), Puzzle::Second) => d01::part2(text)?.to_string(),
+        (Day(02), Puzzle::First) => d02::part1(text)?.to_string(),
+        (Day(02), Puzzle::Second) => d02::part2(text)?.to_string(),
+        (Day(03), Puzzle::First) => d03::part1(text)?.to_string(),
+        (Day(03), Puzzle::Second) => d03::part2(text)?.to_string(),
+        (Day(04), Puzzle::First) => d04::part1(text)?.to_string(),
+        (Day(04), Puzzle::Second) => d04::part2(text)?.to_string(),
+        (Day(05), Puzzle::First) => d05::part1(text)?.to_string(),
+        (Day(05), Puzzle::Second) => d05::part2(text)?.to_string(),
+        (Day(06), Puzzle::First) => d06::part1(text)?.to_string(),
+        (Day(06), Puzzle::Second) => d06::part2(text)?.to_string(),
+        (Day(07), Puzzle::First) => d07::part1(text)?.to_string(),
+        (Day(07), Puzzle::Second) => d07::part2(text)?.to_string(),
         _ => bail!("Not implemented!"),
     };
 

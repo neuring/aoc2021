@@ -148,7 +148,7 @@ fn sum_unmarked(placed: &Board<bool>, map: &BoardMap) -> u32 {
     sum_unmarked
 }
 
-pub fn entry1(text: &str) -> anyhow::Result<u32> {
+pub fn part1(text: &str) -> anyhow::Result<u32> {
     let ParseResult { sequence, boards } = parse(text)?;
 
     let placed = vec![Board::new(5, false); boards.len()];
@@ -174,7 +174,7 @@ pub fn entry1(text: &str) -> anyhow::Result<u32> {
     Err(anyhow!("No bingo occured."))
 }
 
-pub fn entry2(text: &str) -> anyhow::Result<u32> {
+pub fn part2(text: &str) -> anyhow::Result<u32> {
     let ParseResult { sequence, boards } = parse(text)?;
 
     let placed = vec![Board::new(5, false); boards.len()];

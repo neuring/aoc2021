@@ -44,7 +44,7 @@ fn parse(text: &str) -> anyhow::Result<Vec<Instruction>> {
         .collect()
 }
 
-pub fn entry1(text: &str) -> anyhow::Result<i32> {
+pub fn part1(text: &str) -> anyhow::Result<i32> {
     let instructions = parse(&text)?;
 
     let (x, y) = instructions
@@ -59,7 +59,7 @@ pub fn entry1(text: &str) -> anyhow::Result<i32> {
     Ok(x * y)
 }
 
-pub fn entry2(text: &str) -> anyhow::Result<u32> {
+pub fn part2(text: &str) -> anyhow::Result<u32> {
     let instructions = parse(&text)?;
 
     let mut x = 0;

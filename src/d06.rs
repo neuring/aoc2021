@@ -33,10 +33,10 @@ fn simulate(input: &str, days: usize) -> anyhow::Result<usize> {
     Ok(data.into_iter().sum::<usize>())
 }
 
-pub fn entry1(text: &str) -> anyhow::Result<usize> {
+pub fn part1(text: &str) -> anyhow::Result<usize> {
     simulate(text, 80)
 }
 
-pub fn entry2(text: &str) -> anyhow::Result<usize> {
+pub fn part2(text: &str) -> anyhow::Result<usize> {
     simulate(text, 256)
 }

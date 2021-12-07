@@ -22,10 +22,10 @@ fn entry(input: &str, second_puzzle: bool) -> anyhow::Result<usize> {
     Ok(result)
 }
 
-pub fn entry1(text: &str) -> anyhow::Result<usize> {
+pub fn part1(text: &str) -> anyhow::Result<usize> {
     entry(text, false)
 }
 
-pub fn entry2(text: &str) -> anyhow::Result<usize> {
+pub fn part2(text: &str) -> anyhow::Result<usize> {
     entry(text, true)
 }

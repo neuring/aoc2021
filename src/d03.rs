@@ -29,7 +29,7 @@ pub fn get_value_width(text: &str) -> anyhow::Result<usize> {
     Ok(width)
 }
 
-pub fn entry1(text: &str) -> anyhow::Result<u32> {
+pub fn part1(text: &str) -> anyhow::Result<u32> {
     let value_width = get_value_width(text)?;
 
     let mut num_total_values = 0;
@@ -139,7 +139,7 @@ fn find_scrubber_rating(
     Ok(data[0])
 }
 
-pub fn entry2(text: &str) -> anyhow::Result<u32> {
+pub fn part2(text: &str) -> anyhow::Result<u32> {
     let value_width = get_value_width(text)?;
 
     let data = text
