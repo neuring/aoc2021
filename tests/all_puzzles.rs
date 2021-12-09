@@ -61,3 +61,8 @@ gen_test! {small, 08, First, 26}
 gen_test! {main, 08, First, 479}
 gen_test! {small, 08, Second, 61229}
 gen_test! {main, 08, Second, 1041746}
+
+gen_test! {small, 09, First, 15}
+gen_test! {main, 09, First, 588}
+gen_test! {small, 09, Second, 1134}
+gen_test! {main, 09, Second, 964712}

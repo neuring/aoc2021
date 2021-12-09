@@ -16,6 +16,8 @@ mod d05;
 mod d06;
 mod d07;
 mod d08;
+mod d09;
+mod grid;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 pub struct Day(u32);
@@ -109,6 +111,8 @@ fn select(input: &Input, text: &str) -> anyhow::Result<String> {
         (Day(07), Puzzle::Second) => d07::part2(text)?.to_string(),
         (Day(08), Puzzle::First) => d08::part1(text)?.to_string(),
         (Day(08), Puzzle::Second) => d08::part2(text)?.to_string(),
+        (Day(09), Puzzle::First) => d09::part1(text)?.to_string(),
+        (Day(09), Puzzle::Second) => d09::part2(text)?.to_string(),
         _ => bail!("Not implemented!"),
     };
 
