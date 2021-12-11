@@ -3,6 +3,7 @@
 #![feature(drain_filter)]
 #![feature(let_else)]
 #![feature(bool_to_option)]
+#![feature(map_first_last)]
 
 use std::{fmt, path::PathBuf, str::FromStr};
 
@@ -18,6 +19,7 @@ mod d07;
 mod d08;
 mod d09;
 mod d10;
+mod d11;
 mod grid;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -116,6 +118,8 @@ fn select(input: &Input, text: &str) -> anyhow::Result<String> {
         (Day(09), Puzzle::Second) => d09::part2(text)?.to_string(),
         (Day(10), Puzzle::First) => d10::part1(text)?.to_string(),
         (Day(10), Puzzle::Second) => d10::part2(text)?.to_string(),
+        (Day(11), Puzzle::First) => d11::part1(text)?.to_string(),
+        (Day(11), Puzzle::Second) => d11::part2(text)?.to_string(),
         _ => bail!("Not implemented!"),
     };
 
