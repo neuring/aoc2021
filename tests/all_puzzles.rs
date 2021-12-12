@@ -76,3 +76,12 @@ gen_test! {small, 11, First, 1656}
 gen_test! {main, 11, First, 1601}
 gen_test! {small, 11, Second, 195}
 gen_test! {main, 11, Second, 368}
+
+gen_test! {small, 12, First, 10}
+gen_test! {medium, 12, First, 19}
+gen_test! {large, 12, First, 226}
+gen_test! {main, 12, First, 3497}
+gen_test! {small, 12, Second, 36}
+gen_test! {medium, 12, Second, 103}
+gen_test! {large, 12, Second, 3509}
+gen_test! {main, 12, Second, 93686}

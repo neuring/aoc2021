@@ -20,6 +20,8 @@ mod d08;
 mod d09;
 mod d10;
 mod d11;
+mod d12;
+mod graph;
 mod grid;
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
@@ -120,6 +122,8 @@ fn select(input: &Input, text: &str) -> anyhow::Result<String> {
         (Day(10), Puzzle::Second) => d10::part2(text)?.to_string(),
         (Day(11), Puzzle::First) => d11::part1(text)?.to_string(),
         (Day(11), Puzzle::Second) => d11::part2(text)?.to_string(),
+        (Day(12), Puzzle::First) => d12::part1(text)?.to_string(),
+        (Day(12), Puzzle::Second) => d12::part2(text)?.to_string(),
         _ => bail!("Not implemented!"),
     };
 
