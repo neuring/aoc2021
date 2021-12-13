@@ -78,6 +78,10 @@ impl<T> Grid<T> {
     pub fn get_height(&self) -> usize {
         return self.height;
     }
+
+    pub fn rows(&self) -> impl Iterator<Item = &[T]> + '_ {
+        self.data.chunks_exact(self.width)
+    }
 }
 
 #[allow(unused)]
