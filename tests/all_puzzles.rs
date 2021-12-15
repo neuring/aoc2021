@@ -108,3 +108,8 @@ gen_test! {small, 14, First, 1588}
 gen_test! {main, 14, First, 2874}
 gen_test! {small, 14, Second, 2188189693529u64}
 gen_test! {main, 14, Second, 5208377027195u64}
+
+gen_test! {small, 15, First, 40}
+gen_test! {main, 15, First, 441}
+gen_test! {small, 15, Second, 315}
+gen_test! {main, 15, Second, 2849}
