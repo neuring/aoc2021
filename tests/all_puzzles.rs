@@ -113,3 +113,19 @@ gen_test! {small, 15, First, 40}
 gen_test! {main, 15, First, 441}
 gen_test! {small, 15, Second, 315}
 gen_test! {main, 15, Second, 2849}
+
+gen_test! {example_1, 16, First, 16}
+gen_test! {example_2, 16, First, 12}
+gen_test! {example_3, 16, First, 23}
+gen_test! {example_4, 16, First, 31}
+gen_test! {main, 16, First, 1007}
+
+gen_test! {eval_1, 16, Second, 3}
+gen_test! {eval_2, 16, Second, 54}
+gen_test! {eval_3, 16, Second, 7}
+gen_test! {eval_4, 16, Second, 9}
+gen_test! {eval_5, 16, Second, 1}
+gen_test! {eval_6, 16, Second, 0}
+gen_test! {eval_7, 16, Second, 0}
+gen_test! {eval_8, 16, Second, 1}
+gen_test! {main, 16, Second, 834151779165u64}
