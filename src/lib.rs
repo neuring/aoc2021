@@ -4,6 +4,7 @@
 #![feature(let_else)]
 #![feature(bool_to_option)]
 #![feature(map_first_last)]
+#![feature(once_cell)]
 
 use std::{fmt, path::PathBuf, str::FromStr};
 
@@ -25,6 +26,7 @@ mod d13;
 mod d14;
 mod d15;
 mod d16;
+mod d17;
 mod graph;
 mod grid;
 
@@ -136,6 +138,8 @@ fn select(input: &Input, text: &str) -> anyhow::Result<String> {
         (Day(15), Puzzle::Second) => d15::part2(text)?.to_string(),
         (Day(16), Puzzle::First) => d16::part1(text)?.to_string(),
         (Day(16), Puzzle::Second) => d16::part2(text)?.to_string(),
+        (Day(17), Puzzle::First) => d17::part1(text)?.to_string(),
+        (Day(17), Puzzle::Second) => d17::part2(text)?.to_string(),
         _ => bail!("Not implemented!"),
     };
 

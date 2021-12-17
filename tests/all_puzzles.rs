@@ -129,3 +129,8 @@ gen_test! {eval_6, 16, Second, 0}
 gen_test! {eval_7, 16, Second, 0}
 gen_test! {eval_8, 16, Second, 1}
 gen_test! {main, 16, Second, 834151779165u64}
+
+gen_test! {small, 17, First, 45}
+gen_test! {main, 17, First, 12090}
+gen_test! {small, 17, Second, 112}
+gen_test! {main, 17, Second, 5059}
