@@ -8,7 +8,7 @@ macro_rules! gen_test {
                 use aoc2021::{Day, Puzzle::*, Input, run_with_config};
                 let res =
                     run_with_config(&Input {
-                        input: format!("res/{}_{}", paste!{stringify!([<d $day:lower>])}, stringify!($name)).into(),
+                        input: format!("res/{}_{}.txt", paste!{stringify!([<d $day:lower>])}, stringify!($name)).into(),
                         day: Day::new($day),
                         puzzle: $puzzle,
                     })?;
@@ -134,3 +134,8 @@ gen_test! {small, 17, First, 45}
 gen_test! {main, 17, First, 12090}
 gen_test! {small, 17, Second, 112}
 gen_test! {main, 17, Second, 5059}
+
+gen_test! {small, 18, First, 4140}
+gen_test! {main, 18, First, 4173}
+gen_test! {small, 18, Second, 3993}
+gen_test! {main, 18, Second, 4706}
