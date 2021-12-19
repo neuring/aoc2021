@@ -139,3 +139,8 @@ gen_test! {small, 18, First, 4140}
 gen_test! {main, 18, First, 4173}
 gen_test! {small, 18, Second, 3993}
 gen_test! {main, 18, Second, 4706}
+
+gen_test! {small, 19, First, 79}
+//gen_test! {main, 19, First, 425}
+gen_test! {small, 19, Second, 3621}
+//gen_test! {main, 19, Second, 13354}
