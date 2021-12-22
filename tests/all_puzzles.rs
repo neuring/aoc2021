@@ -154,3 +154,8 @@ gen_test! {small, 21, First, 739785}
 gen_test! {main, 21, First, 798147}
 gen_test! {small, 21, Second, 444356092776315u64}
 gen_test! {main, 21, Second, 809953813657517u64}
+
+gen_test! {small, 22, First, 590784}
+gen_test! {main, 22, First, 596989}
+gen_test! {medium, 22, Second, 2758514936282235i64}
+// gen_test! {main, 22, Second, 1160011199157381i64} Fairly slow...
