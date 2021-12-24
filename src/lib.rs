@@ -33,6 +33,7 @@ mod d20;
 mod d21;
 mod d22;
 mod d23;
+mod d24;
 mod graph;
 mod grid;
 
@@ -158,6 +159,8 @@ fn select(input: &Input, text: &str) -> anyhow::Result<String> {
         (Day(22), Puzzle::Second) => d22::part2(text)?.to_string(),
         (Day(23), Puzzle::First) => d23::part1(text)?.to_string(),
         (Day(23), Puzzle::Second) => d23::part2(text)?.to_string(),
+        (Day(24), Puzzle::First) => d24::part1(text)?.to_string(),
+        (Day(24), Puzzle::Second) => d24::part2(text)?.to_string(),
         _ => bail!("Not implemented!"),
     };
 
