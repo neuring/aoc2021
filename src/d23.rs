@@ -40,19 +40,6 @@ enum Tile {
     Amphi(AmphiType),
 }
 
-impl Tile {
-    fn to_char(&self) -> char {
-        match self {
-            Tile::Wall => '#',
-            Tile::Empty => '.',
-            Tile::Amphi(AmphiType::Amber) => 'A',
-            Tile::Amphi(AmphiType::Bronze) => 'B',
-            Tile::Amphi(AmphiType::Copper) => 'C',
-            Tile::Amphi(AmphiType::Desert) => 'D',
-        }
-    }
-}
-
 fn parse(grid: &str) -> anyhow::Result<Grid<Tile>> {
     let height = grid.trim().lines().count();
     let width = grid.trim().lines().next().unwrap().trim().chars().count();
@@ -338,9 +325,6 @@ fn solve(input: &str) -> anyhow::Result<u32> {
 
     let initial_state = build_initial_state(&grid);
     let target_state = create_target_state(&initial_state);
-
-    //dbg!(&initial_state);
-    //dbg!(&target_state);
 
     let mut solver = Solver::new(initial_state, target_state);
 
