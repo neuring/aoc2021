@@ -2,7 +2,7 @@ use std::ops::{Index, IndexMut};
 
 use itertools::iproduct;
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct Grid<T> {
     width: usize,
     height: usize,
@@ -101,6 +101,10 @@ impl<T: Clone> Grid<T> {
             height,
             data,
         }
+    }
+
+    pub fn fill(&mut self, v: T) {
+        self.data.fill(v)
     }
 }
 

@@ -164,3 +164,5 @@ gen_test! {small, 23, First, 12521}
 //gen_test! {main, 23, First, 11516}
 gen_test! {small_second, 23, Second, 44169}
 gen_test! {main_second, 23, Second, 40272}
+
+gen_test! {small, 25, First, 58}
